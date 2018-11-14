@@ -8,8 +8,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.UUID;
 
-import static org.junit.Assert.*;
-
 @RunWith(SpringRunner.class)
 @DataMongoTest
 public class MangoRepositoryTest {
@@ -19,22 +17,13 @@ public class MangoRepositoryTest {
 
     @Test
     public void saveMango() {
+
         final Mango mango = Mango.builder()
+                .id(UUID.randomUUID())
                 .type(MangoTypeEnum.SWEET)
-                .part(UUID.randomUUID())
+                .part("123#ABC")
                 .build();
 
         repository.save(mango);
     }
-
-    @Test
-    public void findMangoByType() {
-
-    }
-
-    @Test
-    public void findMangoByPart() {
-    }
-
-
 }

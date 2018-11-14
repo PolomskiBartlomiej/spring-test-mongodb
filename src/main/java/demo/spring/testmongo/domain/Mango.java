@@ -10,9 +10,9 @@ import java.util.UUID;
 @Builder
 public class Mango {
     @Id
-    Integer integer;
+    UUID id;
 
-    UUID part;
+    String part;
 
     MangoTypeEnum type;
 }
